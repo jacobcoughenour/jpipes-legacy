@@ -159,7 +159,7 @@ namespace Oxide.Plugins {
         void OnServerSave() => SavePipes();
 		
 
-        void OnPlayerInit(BasePlayer player) {
+        void OnPlayerConnected(BasePlayer player) {
 
             GetUserInfo(player);
 

@@ -11,7 +11,7 @@ using Oxide.Core.Libraries.Covalence;
 
 namespace Oxide.Plugins {
 
-    [Info("JPipes", "TheGreatJ", "0.6.4", ResourceId = 2402)]
+    [Info("JPipes", "TheGreatJ", "0.6.6", ResourceId = 2402)]
     class JPipes : RustPlugin {
 
         [PluginReference]

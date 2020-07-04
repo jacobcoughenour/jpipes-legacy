@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 //using System.Reflection; // enable for ListComponentDebug
@@ -11,7 +11,7 @@ using Oxide.Core.Libraries.Covalence;
 
 namespace Oxide.Plugins {
 
-    [Info("JPipes", "TheGreatJ", "0.6.6", ResourceId = 2402)]
+    [Info("JPipes", "TheGreatJ", "0.6.7", ResourceId = 2402)]
     class JPipes : RustPlugin {
 
         [PluginReference]
@@ -946,14 +946,17 @@ namespace Oxide.Plugins {
                     return contoffset.turret;
                 } else if (e is SearchLight) {
                     return contoffset.searchlight;
-                } else if (e is WaterCatcher) {
-                    if (e.GetComponent<WaterCatcher>()._collider.ToString().Contains("small"))
-                        return contoffset.smallwatercatcher;
-                    return contoffset.largewatercatcher;
-                } else if (e is LiquidContainer) {
-                    if (e.GetComponent<LiquidContainer>()._collider.ToString().Contains("purifier"))
-                        return contoffset.waterpurifier;
-                    return contoffset.waterbarrel;
+                // } else if (e is WaterCatcher) {
+                    // if (e.GetComponent<WaterCatcher>()._collider.ToString().Contains("small"))
+                        // return contoffset.smallwatercatcher;
+                    // return contoffset.largewatercatcher;
+                // } else if (e is LiquidContainer) {
+	                // if (e is WaterPurifier) {
+		                // return contoffset.waterpurifier;
+	                // }
+	                // if (e.GetComponent<LiquidContainer>()._collider.ToString().Contains("purifier"))
+                        // return contoffset.waterpurifier;
+                    // return contoffset.waterbarrel;
                 }
                 return Vector3.zero;
             }
@@ -1429,14 +1432,14 @@ namespace Oxide.Plugins {
 					return GetItemIconURL("Shotgun_Trap", 140);
 				} else if (e is SearchLight) {
 					return GetItemIconURL("Search_Light", 140);
-				} else if (e is WaterCatcher) {
-					if (e.GetComponent<WaterCatcher>()._collider.ToString().Contains("small"))
-						return GetItemIconURL("Small_Water_Catcher", 140);
-					return GetItemIconURL("Large_Water_Catcher", 140);
-				} else if (e is LiquidContainer) {
-					if (e.GetComponent<LiquidContainer>()._collider.ToString().Contains("purifier"))
-						return GetItemIconURL("Water_Purifier", 140);
-					return GetItemIconURL("Water_Barrel", 140);
+				// } else if (e is WaterCatcher) {
+					// if (e.GetComponent<WaterCatcher>()._collider.ToString().Contains("small"))
+						// return GetItemIconURL("Small_Water_Catcher", 140);
+					// return GetItemIconURL("Large_Water_Catcher", 140);
+				// } else if (e is LiquidContainer) {
+					// if (e.GetComponent<LiquidContainer>()._collider.ToString().Contains("purifier"))
+						// return GetItemIconURL("Water_Purifier", 140);
+					// return GetItemIconURL("Water_Barrel", 140);
 				} else if (e is VendingMachine) {
 					return GetItemIconURL("Vending_Machine", 140);
 				} else if (e is DropBox) {

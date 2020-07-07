@@ -13,7 +13,7 @@ using Random = System.Random;
 
 namespace Oxide.Plugins {
 
-	[Info("JPipes", "TheGreatJ", "0.6.7", ResourceId = 2402)]
+	[Info("JPipes", "TheGreatJ", "0.6.8", ResourceId = 2402)]
 	class JPipes : RustPlugin {
 
 		[PluginReference]
@@ -2258,6 +2258,11 @@ namespace Oxide.Plugins {
 			return parent?.GetComponent<StorageContainer>();
 		}
 
+		private bool IsPipe(BaseEntity entity) {
+			jPipeSegChild p = entity.GetComponent<jPipeSegChild>();
+			return p != null && p.pipe != null;
+		}
+
 		private void RegisterPipe(jPipe pipe) {
 			GetUserInfo(pipe.ownerid).pipes.Add(pipe.id, pipe);
 			regpipes.Add(pipe.id, pipe);
@@ -2994,6 +2999,10 @@ namespace Oxide.Plugins {
 			Config[configstring] = fallback;
 			SaveConfig();
 			return fallback;
+		}
+
+		private bool IsNoDecayEnabled() {
+			return nodecay;
 		}
 
 		#endregion

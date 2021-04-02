@@ -13,7 +13,8 @@ using Random = System.Random;
 
 namespace Oxide.Plugins {
 
-	[Info("JPipes", "TheGreatJ", "0.6.8", ResourceId = 2402)]
+	[Info("JPipes", "TheGreatJ", "0.6.9")]
+	[Description("Pipes that automatically transfer items between boxes, furnaces, turrets, quarries, etc.")]
 	class JPipes : RustPlugin {
 
 		[PluginReference]
@@ -2500,7 +2501,7 @@ namespace Oxide.Plugins {
 
 			private bool CanAcceptItem(Item itemtomove) {
 				//if (pipe.dest is VendingMachine) {
-				//    bool result = pipe.destcont.inventory.CanTake(itemtomove);
+				//    bool result = pipe.destcont.inventory.CanAccept(itemtomove);
 				//    pipe.debugstring = result.ToString() + (pipe.destcont.inventory.CanAcceptItem(itemtomove) == ItemContainer.CanAcceptResult.CanAccept).ToString();
 				//    //return result;
 				//}
@@ -2510,7 +2511,7 @@ namespace Oxide.Plugins {
 
 				return pipe.destcont.inventory.CanAcceptItem(itemtomove, -1) ==
 				       ItemContainer.CanAcceptResult.CanAccept &&
-				       pipe.destcont.inventory.CanTake(itemtomove);
+				       pipe.destcont.inventory.CanAccept(itemtomove);
 			}
 
 			private Item FindItem() {

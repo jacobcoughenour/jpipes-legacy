@@ -13,7 +13,7 @@ using Random = System.Random;
 
 namespace Oxide.Plugins {
 
-	[Info("JPipes", "TheGreatJ", "0.6.9")]
+	[Info("JPipes", "TheGreatJ", "0.6.10")]
 	[Description("Pipes that automatically transfer items between boxes, furnaces, turrets, quarries, etc.")]
 	class JPipes : RustPlugin {
 
@@ -2155,7 +2155,7 @@ namespace Oxide.Plugins {
 			  e is RepairBench);
 
 		private bool checkcontprivlage(BaseEntity e, BasePlayer p) =>
-			e.GetComponent<StorageContainer>().CanOpenLootPanel(p) &&
+			e.GetComponent<StorageContainer>().CanOpenLootPanel(p,"") &&
 			checkbuildingprivlage(p);
 
 		private bool checkbuildingprivlage(BasePlayer p) {

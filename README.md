@@ -1,3 +1,10 @@
+
+---
+# ⚠️ NOTICE: This plugin is no longer maintained. 
+# 👉 **Use [syncPipes](http://umod.org/plugins/sync-pipes) by [Joe90](http://umod.org/user/Joe90).** *"It's way better" - TheGreatJ*
+---
+
+
 JPipes adds pipes that transfer items between deployables with limitless automation possibilities.
 
 ![](https://i.imgur.com/BeYWVPO.png?1)
